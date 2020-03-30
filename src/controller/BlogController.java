@@ -1,5 +1,6 @@
-package controller;
-
+ package controller;
+ 
+import utility.*;
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -47,8 +48,11 @@ public class BlogController extends HttpServlet {
 		blog.setBlogTitle(title);
 		blog.setBlogDescription(description);
 		blog.setDate(postedOn);
+		
+		CheckBlogPost checkBlogPost=new CheckBlogPost();
+		boolean checkblog = checkBlogPost.checkBlog(blog);
 
-		if(checkblog!) {
+		if(checkblog) {
 			request.setAttribute("blog", blog);
 			request.setAttribute("user",user);
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/blogView.jsp");
