@@ -12,8 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Blog;
 import model.User;
-
-
+import utility.*;
 @WebServlet(urlPatterns= {"/blog"})
 public class BlogController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -47,8 +46,16 @@ public class BlogController extends HttpServlet {
 		blog.setBlogTitle(title);
 		blog.setBlogDescription(description);
 		blog.setDate(postedOn);
-
-		if(checkblog!) {
+		
+		/*
+		 * Progression - 6
+			Create an object for checkBlogPost in BlogController.
+			Call the checkBlog method with the object created and pass user as argument.
+			Store the value in a boolean variable checkblog.
+		 */
+		CheckBlogPost b = new CheckBlogPost();
+		boolean checkblog = b.checkBlog(blog);
+		if(!checkblog) {
 			request.setAttribute("blog", blog);
 			request.setAttribute("user",user);
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/blogView.jsp");
