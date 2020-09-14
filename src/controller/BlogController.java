@@ -12,13 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Blog;
 import model.User;
+import utility.CheckBlogPost;
+import utility.OffensiveWordsChecker;
 
 
 @WebServlet(urlPatterns= {"/blog"})
 public class BlogController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
+	OffensiveWordsChecker offensiveWordsChecker  = new CheckBlogPost();
+	
     public BlogController() {
         super();
     }
@@ -47,8 +50,9 @@ public class BlogController extends HttpServlet {
 		blog.setBlogTitle(title);
 		blog.setBlogDescription(description);
 		blog.setDate(postedOn);
-
-		if(checkblog!) {
+		boolean checkblog = offensiveWordsChecker.checkBlog(blog);
+         System.out.println("check blog "+checkblog);
+		if(checkblog==true) { // here call any method
 			request.setAttribute("blog", blog);
 			request.setAttribute("user",user);
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/blogView.jsp");
