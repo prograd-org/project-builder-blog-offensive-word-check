@@ -1,12 +1,13 @@
 package testing;
 
-/*Uncomment the below code to test your application
+//Uncomment the below code to test your application
 
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 import model.Blog;
 
@@ -32,4 +33,3 @@ public class TestBlog {
 		 }
 	 }
 }
-*/
