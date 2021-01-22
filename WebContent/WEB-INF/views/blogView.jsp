@@ -26,14 +26,14 @@
         <button class="button" id="addBlog" ><i class="fas fa-plus-circle"></i>Add New Post</button>
     </div>
 <div id="popup">
+
 <!-- Popup Div Starts Here -->
 <div id="popupContact">
 <img id="close" src="./assets/close-button.svg" onclick ="div_hide()">
 <img id="rect" src=./assets/rect.svg>
 <h2>Your Post</h2>
 <!-- Contact Us Form -->
-<form action="${pageContext.request.contextPath}/blog" id="form" method="post" name="form"> <%--${pageContext.request.contextPath}/blog  --%>
-
+<form action="${pageContext.request.contextPath}/blog" id="form" method="post" name="form"> 
 <input id="title" name="title-text" placeholder="Title" type="text">
 <textarea id="msg" name="message-text" placeholder="Description"></textarea>
 <!-- <p id="subject">Subject</p>
@@ -62,7 +62,7 @@
             </div>
         </div>
 </div>
-<div clas="body-div3">
+<div class="body-div3">
 <h1>${error}</h1>
 </div>
     <!--         <div class="article-card">
@@ -139,7 +139,8 @@
                 <a href="">EDIT</a> <span>|</span><a href="">DELETE</a>
             </div>
         </div>
-    </div> -->
+    </div> 
+    -->
     <script src="./script/app.js" type="text/javascript"></script>
 </body>
 </html>

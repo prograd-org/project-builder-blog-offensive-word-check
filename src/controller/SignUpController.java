@@ -45,7 +45,7 @@ public class SignUpController extends HttpServlet {
 		
 		if(checkUser.checkUserDetails(email, password, confirmPassword))
 		{
-			User user=new User(email,password,date);
+			User user=new User(email.trim(),password.trim(),date);
 			user.setEmail(email);
 			user.setPassword(password);
 			user.setDate(date);

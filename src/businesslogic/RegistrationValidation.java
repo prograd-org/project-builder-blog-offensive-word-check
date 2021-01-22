@@ -17,6 +17,8 @@ public class RegistrationValidation {
 
 	private boolean validPassword(String password, String confirmPassword) {
 		
+		if(password==null||confirmPassword==null)
+			return false;
 		
 		 pattern = Pattern.compile(PASSWORD_PATTERN);
 		 if(password.equals(confirmPassword)) {
@@ -32,9 +34,11 @@ public class RegistrationValidation {
 	}
 
 	private boolean validEmail(String email) {
-		
+		if(email==null)
+			 return false;
 		 String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
 		 System.out.println("Enter email validation");
+		 
 		 return email.matches(regex);
 	}
 	
